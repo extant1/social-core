@@ -6,7 +6,7 @@ from .open_id import OpenIdAuth
 from ..exceptions import AuthFailed
 
 
-USER_INFO = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?'
+USER_INFO = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?'
 
 
 class SteamOpenId(OpenIdAuth):
@@ -19,7 +19,7 @@ class SteamOpenId(OpenIdAuth):
 
     def get_user_details(self, response):
         player = self.get_json(USER_INFO, params={
-            'key': self.setting('API_KEY'),
+            'key': self.setting('STEAM_API_KEY'),
             'steamids': self._user_id(response)
         })
         if len(player['response']['players']) > 0:
