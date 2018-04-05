@@ -6,7 +6,7 @@ from .open_id import OpenIdAuth
 from ..exceptions import AuthFailed
 
 
-USER_INFO = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?'
+USER_INFO = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?'
 
 
 class SteamOpenId(OpenIdAuth):
